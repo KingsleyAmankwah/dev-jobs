@@ -1,0 +1,117 @@
+.inputLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 3.2rem;
+  min-width: 20rem;
+}
+
+.inputLabel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.1rem;
+  height: 100%;
+  background-color: #6e8098;
+  opacity: 0.2;
+  margin: 0 1rem;
+}
+
+.inputField {
+  flex-grow: 1;
+  font-size: 1.6rem;
+  color: var(--color-text);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.inputField::placeholder {
+  color: #8c8f96;
+}
+
+.checkboxLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0 !important;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  .inputLabel {
+    padding: 2rem 1rem;
+  }
+
+  .checkboxLabel {
+    padding: 2rem 1rem;
+  }
+}
+
+.checkboxCustomInput {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #f2f2f2f2;
+  border-radius: 0.3rem;
+  position: relative;
+  transition: 0.2s linear;
+}
+
+.checkboxCustomInput:hover,
+.checkboxLabel:hover .checkboxCustomInput {
+  background-color: #d5d8f7;
+}
+
+.checkboxCustomInput:active,
+.checkboxLabel:active .checkboxCustomInput {
+  transform: scale(0.8);
+}
+
+.checkboxDefaultInput:checked ~ .checkboxCustomInput {
+  background-color: #5964e0;
+  border-radius: 0.3rem;
+}
+
+.checkboxDefaultInput:checked ~ .checkboxCustomInput::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 0.6rem;
+  border-left: 0.2rem solid #fff;
+  border-bottom: 0.2rem solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%) rotate(-45deg);
+}
+
+.button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+.button {
+  color: #fff;
+  background-color: #5964e0;
+}
+
+.button:hover {
+  background-color: #939bf4;
+}
+
+@media screen and (max-width: 600px) {
+  .inputLabel::after {
+    display: none;
+  }
+}
