@@ -1,5 +1,9 @@
 <section
-  class="p-[1rem_3.2rem_3.2rem] jobCard bg-white rounded-[0.6rem] mx-8 sm:mx-0"
+  [ngClass]="{
+    'p-[1rem_3.2rem_3.2rem]  rounded-[0.6rem] mx-8 sm:mx-0': true,
+    'bg-white': !isDarkTheme,
+    'bg-[#19202d]': isDarkTheme
+  }"
 >
   <div
     class="grid place-items-center shrink-0 w-[5rem] h-[5rem] rounded-3xl bg-red-600 -mt-10 mb-[2.2rem]"
@@ -15,7 +19,11 @@
 
   <a href="/details">
     <h3
-      class="font-bold text-[2rem] py-[1.2rem] px-0 text-[#19202D] hover:text-[#6e8098]"
+      [ngClass]="{
+        'font-bold text-[2rem] py-[1.2rem] px-0  hover:text-[#6e8098]': true,
+        'text-[#19202D]': !isDarkTheme,
+        'text-white': isDarkTheme
+      }"
     >
       Software Engineer
     </h3>

@@ -1,7 +1,11 @@
 <div class="lg:mx-[10%] md:mx-[5%]">
   <form class="relative w-full">
     <div
-      class="searchBar hidden md:flex items-center justify-between bg-white -mt-20 px-8 rounded-[0.6rem]"
+      [ngClass]="{
+        ' hidden md:flex items-center justify-between  -mt-20 px-8 rounded-[0.6rem]': true,
+        'bg-white': !isDarkTheme,
+        'bg-[#19202d]': isDarkTheme
+      }"
     >
       <label class="inputLabel lg:grow">
         <img src="/assets/images/desktop/icon-search.svg" alt="search icon" />
@@ -36,8 +40,20 @@
           class="checkboxDefaultInput hidden"
           type="checkbox"
         />
-        <span class="checkboxCustomInput"></span>
-        <span class="text-[#19202D] font-bold">
+        <span
+          class="checkboxCustomInput"
+          [ngClass]="{
+            'bg-[#f2f2f2f2]': !isDarkTheme,
+            'bg-[#313743]': isDarkTheme
+          }"
+        ></span>
+        <span
+          [ngClass]="{
+            'font-bold': true,
+            'text-[#19202D]': !isDarkTheme,
+            'text-white': isDarkTheme
+          }"
+        >
           Full Time
           <span class="hidden lg:inline-flex"> Only </span>
         </span>
@@ -51,7 +67,11 @@
     </div>
 
     <div
-      class="searchBar relative flex md:hidden items-center justify-between bg-white -mt-20 mx-[5%] md:mx-[10%] p-3 rounded-[0.6rem]"
+      [ngClass]="{
+        'searchBar relative flex md:hidden items-center justify-between -mt-20 mx-[5%] md:mx-[10%] p-3 rounded-[0.6rem]': true,
+        'bg-white': !isDarkTheme,
+        'bg-[#19202d]': isDarkTheme
+      }"
     >
       <input
         class="inputField grow"
@@ -64,7 +84,7 @@
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M19.108 0H.86a.86.86 0 00-.764.455.833.833 0 00.068.884l6.685 9.202.007.01c.242.32.374.708.375 1.107v7.502a.825.825 0 00.248.594.865.865 0 00.942.18l3.756-1.4c.337-.1.56-.41.56-.784v-6.092c0-.399.132-.787.375-1.108l.007-.009 6.685-9.202c.19-.26.217-.6.068-.884A.86.86 0 0019.108 0z"
-              fill="#6E8098"
+              [attr.fill]="isDarkTheme ? 'white' : '#6E8098'"
               fill-rule="nonzero"
             />
           </svg>
@@ -92,10 +112,14 @@
     <div class="fixed md:hidden inset-0 z-20 px-8">
       <div class="absolute inset-0 bg-black h-auto opacity-80 z-40"></div>
       <div
-        class="relative top-[40%] left-[50%] -translate-x-2/4 flex flex-col justify-center bg-white z-50 rounded-lg py-4"
+        [ngClass]="{
+          'relative top-[40%] left-[50%] -translate-x-2/4 flex flex-col justify-center z-50 rounded-lg py-4': true,
+          'bg-white': !isDarkTheme,
+          'bg-[#19202d]': isDarkTheme
+        }"
       >
         <div class="flex flex-col">
-          <label class="inputLabel border-b border-gray-300">
+          <label class="inputLabel border-b-[0.5px] border-[#8c8f96]">
             <img
               src="/assets/images/desktop/icon-location.svg"
               alt="location icon"
@@ -113,11 +137,25 @@
               class="checkboxDefaultInput hidden"
               type="checkbox"
             />
-            <span class="checkboxCustomInput"></span>
-            <span class="text-[#19202D] font-bold"> Full Time Only </span>
+            <span
+              class="checkboxCustomInput"
+              [ngClass]="{
+                'bg-[#f2f2f2f2]': !isDarkTheme,
+                'bg-[#313743]': isDarkTheme
+              }"
+            ></span>
+            <span
+              [ngClass]="{
+                'font-bold': true,
+                'text-[#19202D]': !isDarkTheme,
+                'text-white': isDarkTheme
+              }"
+            >
+              Full Time Only
+            </span>
           </label>
 
-          <div class="mx-12">
+          <div class="mx-3">
             <Button
               class="button flex items-center justify-center w-full py-[1rem] px-[4rem]"
             >
