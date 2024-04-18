@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
+import { JobCardComponent } from '../../job-card/job-card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [JobCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
