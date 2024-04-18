@@ -1,0 +1,217 @@
+<div class="lg:mx-[25%] mx-[5%]">
+  <div
+    [ngClass]="{
+      'md:-mt-20 -mt-10 rounded-[0.6rem] flex flex-col items-center md:flex-row': true,
+      'bg-white': !isDarkTheme,
+      'bg-[#19202d]': isDarkTheme
+    }"
+  >
+    <div
+      class="md:w-[14rem] bg-[rgb(234_147_16)] grid place-items-center md:rounded-bl-[0.6rem] md:p-[5rem] p-[1rem] w-[5rem] h-[5rem] rounded-3xl md:rounded-none -mt-10 md:-mt-0"
+    >
+      <img
+        src="/assets/images/logos/scoot.svg"
+        class="w-full"
+        alt="company logo"
+      />
+    </div>
+
+    <div
+      class="flex flex-col md:flex-row text-center items-center w-full justify-between md:mx-16 my-8 md:text-left"
+    >
+      <div class="companyName">
+        <h3
+          [ngClass]="{
+            'font-bold text-[2rem]': true,
+            'text-[#19202D]': !isDarkTheme,
+            'text-white': isDarkTheme
+          }"
+        >
+          Scoot
+        </h3>
+        <p class="cursor-pointer">scoot.com</p>
+      </div>
+
+      <div class="my-8 md:my-0">
+        <Button
+          [ngClass]="{
+            'py-[1rem] px-[2rem] lg:px-[3rem] font-bold rounded-[0.5rem]': true,
+            'bg-[#eeeffc] text-[#5964e0] hover:bg-[#939bf4]': !isDarkTheme,
+            'bg-[#303642] text-white hover:bg-[#c9c9c9]': isDarkTheme
+          }"
+        >
+          Company Site
+        </Button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{
+      'bg-white mt-10 p-10 rounded-[0.6rem]': true,
+      'bg-white': !isDarkTheme,
+      'bg-[#19202d]': isDarkTheme
+    }"
+  >
+    <div class="details flex md:flex-row flex-col items-center justify-between">
+      <div class="title">
+        <div class="flex items-baseline gap-5">
+          <p>1w ago</p>
+          <span class="w-[0.4rem] h-[0.4rem] rounded-full bg-[#6e8098]"></span>
+          <p>Part Time</p>
+        </div>
+
+        <div class="name">
+          <h3
+            [ngClass]="{
+              'font-bold text-[2.8rem] py-[0.8rem] px-0': true,
+              'text-[#19202D]': !isDarkTheme,
+              'text-white': isDarkTheme
+            }"
+          >
+            Senior Software Engineer
+          </h3>
+
+          <h4 class="font-bold text-[1.4rem] text-[#5964e0]">Accra, Ghana</h4>
+        </div>
+      </div>
+
+      <div
+        class="apply-btn my-12 md:my-0 flex justify-center w-full md:w-fit bg-[#5964e0] rounded-lg md:bg-transparent md:rounded-none"
+      >
+        <div>
+          <Button class="button py-[1rem] px-[2rem] lg:px-[3rem]">
+            Apply Now
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <section class="description py-10">
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+        hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet
+        vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
+        laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu
+        nibh. Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et
+        vulputate volutpat, eros pede semper est, vitae luctus metus libero eu
+        augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida
+        id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper
+        lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque
+        euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu,
+        dapibus eu, fermentum et, dapibus sed, urna.
+      </p>
+    </section>
+
+    <section class="requirements py-10">
+      <h3
+        [ngClass]="{
+          'font-bold text-[2rem] pb-10': true,
+          'text-[#19202D]': !isDarkTheme,
+          'text-white': isDarkTheme
+        }"
+      >
+        Requirements
+      </h3>
+
+      <p class="pb-5">
+        Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a
+        ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero
+        dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius,
+        adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam
+        pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida
+        vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu,
+        vulputate vel, nisl.
+      </p>
+
+      <div class="flex flex-col gap-6">
+        <li>
+          5+ years of industry experience in a software engineering role,
+          preferably building a SaaS product. You can demonstrate significant
+          impact that your work has had on the product and/or the team.
+        </li>
+        <li>
+          2+ years of industry experience in a software engineering role,
+          preferably building a SaaS product.
+        </li>
+        <li>
+          A year of industry experience in a software engineering role,
+          preferably building a SaaS product. You can demonstrate significant
+          impact that your work has had on the product and/or the team.
+        </li>
+      </div>
+    </section>
+
+    <section class="duties py-10">
+      <h3
+        [ngClass]="{
+          'font-bold text-[2rem] pb-10': true,
+          'text-[#19202D]': !isDarkTheme,
+          'text-white': isDarkTheme
+        }"
+      >
+        What You Will Do
+      </h3>
+
+      <p class="pb-5">
+        Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a
+        ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero
+        dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius,
+        adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam
+        pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida
+        vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu,
+        vulputate vel, nisl.
+      </p>
+
+      <div class="flex flex-col gap-6">
+        <li>
+          5+ years of industry experience in a software engineering role,
+          preferably building a SaaS product. You can demonstrate significant
+          impact that your work has had on the product and/or the team.
+        </li>
+        <li>
+          2+ years of industry experience in a software engineering role,
+          preferably building a SaaS product.
+        </li>
+        <li>
+          A year of industry experience in a software engineering role,
+          preferably building a SaaS product. You can demonstrate significant
+          impact that your work has had on the product and/or the team.
+        </li>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer
+  [ngClass]="{
+    'lg:px-[25%] px-[5%]  mt-10 py-[2rem]': true,
+    'bg-white': !isDarkTheme,
+    'bg-[#19202d]': isDarkTheme
+  }"
+>
+  <div class="flex justify-between">
+    <div class="companyName hidden md:block">
+      <h3
+        [ngClass]="{
+          'font-bold text-[2rem]': true,
+          'text-[#19202D]': !isDarkTheme,
+          'text-white': isDarkTheme
+        }"
+      >
+        Scoot
+      </h3>
+      <p class="capitalize">So Digital Inc.</p>
+    </div>
+
+    <div
+      class="apply-btn flex justify-center w-full md:w-fit bg-[#5964e0] rounded-lg md:bg-transparent md:rounded-none"
+    >
+      <div>
+        <Button class="button py-[1rem] px-[2rem] lg:px-[3rem]">
+          Apply Now
+        </Button>
+      </div>
+    </div>
+  </div>
+</footer>
