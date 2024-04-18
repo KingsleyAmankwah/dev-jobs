@@ -48,3 +48,20 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
+
+button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+.button {
+  color: #fff;
+  background-color: #5964e0;
+}
+
+.button:hover {
+  background-color: #939bf4;
+}
