@@ -21,7 +21,6 @@ body {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: #6e8098;
-  background-color: #f4f6f8;
 }
 
 header {
@@ -48,5 +47,4 @@ input {
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
-
 }
