@@ -10,13 +10,21 @@
       <label class="inputLabel lg:grow">
         <img src="/assets/images/desktop/icon-search.svg" alt="search icon" />
         <input
-          class="inputField hidden lg:flex"
+          [ngClass]="{
+            'inputField hidden lg:flex': true,
+            'text-white': isDarkTheme,
+            'text-[#8c8f96]': !isDarkTheme
+          }"
           type="text"
           placeholder="Filter by title, companies, expertise..."
         />
 
         <input
-          class="inputField md:flex lg:hidden"
+          [ngClass]="{
+            'inputField lg:hidden md:flex': true,
+            'text-white': isDarkTheme,
+            'text-[#8c8f96]': !isDarkTheme
+          }"
           type="text"
           placeholder="Filter by title..."
         />
@@ -28,7 +36,11 @@
           alt="location icon"
         />
         <input
-          class="inputField"
+          [ngClass]="{
+            inputField: true,
+            'text-white': isDarkTheme,
+            'text-[#8c8f96]': !isDarkTheme
+          }"
           type="text"
           placeholder="Filter by Location..."
         />
@@ -74,7 +86,11 @@
       }"
     >
       <input
-        class="inputField grow"
+        [ngClass]="{
+          'inputField grow': true,
+          'text-white': isDarkTheme,
+          'text-[#8c8f96]': !isDarkTheme
+        }"
         type="text"
         placeholder="Filter by title..."
       />
@@ -125,7 +141,11 @@
               alt="location icon"
             />
             <input
-              class="inputField"
+              [ngClass]="{
+                inputField: true,
+                'text-white': isDarkTheme,
+                'text-[#8c8f96]': !isDarkTheme
+              }"
               type="text"
               placeholder="Filter by Location..."
             />
@@ -171,6 +191,18 @@
   <div
     class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 p-[8rem_0_0]"
   >
-    <app-job-card />
+    <ng-container *ngFor="let job of displayJobs">
+      <app-job-card [job]="job" />
+    </ng-container>
+  </div>
+
+  <div class="flex items-center justify-center my-10">
+    <Button
+      class="button py-[1rem] px-[4rem]"
+      *ngIf="hasMoreJobs()"
+      (click)="addMoreJobs()"
+    >
+      Load More
+    </Button>
   </div>
 </div>
