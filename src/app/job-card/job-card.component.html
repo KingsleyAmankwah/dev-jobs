@@ -1,33 +1,36 @@
 <section
   [ngClass]="{
-    'p-[1rem_3.2rem_3.2rem]  rounded-[0.6rem] mx-8 sm:mx-0': true,
+    'p-[1rem_3.2rem_3.2rem] mb-10 md:mb-20  rounded-[0.6rem] mx-8 sm:mx-0': true,
     'bg-white': !isDarkTheme,
     'bg-[#19202d]': isDarkTheme
   }"
 >
   <div
-    class="grid place-items-center shrink-0 w-[5rem] h-[5rem] rounded-3xl bg-red-600 -mt-10 mb-[2.2rem]"
+    class="grid place-items-center shrink-0 w-[5rem] h-[5rem] rounded-3xl -mt-10 mb-[2.2rem]"
+    [style.background]="job.logoBackground"
   >
-    <img src="/assets/images/logos/blogr.svg" class="w-[58%]" alt="job logo" />
+    <img [src]="job.logo" class="w-[58%]" alt="job logo" />
   </div>
 
   <div class="flex items-baseline gap-5">
-    <p>1h</p>
+    <p>{{ job.postedAt }}</p>
     <span class="w-[0.4rem] h-[0.4rem] rounded-full bg-[#6e8098]"></span>
-    <p>Full Time</p>
+    <p>{{ job.contract }}</p>
   </div>
 
-  <a href="/details">
-    <h3
-      [ngClass]="{
-        'font-bold text-[2rem] py-[1.2rem] px-0  hover:text-[#6e8098]': true,
-        'text-[#19202D]': !isDarkTheme,
-        'text-white': isDarkTheme
-      }"
-    >
-      Software Engineer
-    </h3>
-  </a>
-  <p class="text-[#6E8098]">Blogrr</p>
-  <h4 class="font-bold text-[1.4rem] text-[#5964e0] pt-[4rem]">Accra, Ghana</h4>
+  <h3
+    [routerLink]="['/details', job.id]"
+    [ngClass]="{
+      'font-bold text-[1.6rem] md:text-[2rem] py-[1.2rem] px-0 cursor-pointer hover:text-[#6e8098]': true,
+      'text-[#19202D]': !isDarkTheme,
+      'text-white': isDarkTheme
+    }"
+  >
+    {{ job.position }}
+  </h3>
+
+  <p class="text-[#6E8098]">{{ job.company }}</p>
+  <h4 class="font-bold text-[1.4rem] text-[#5964e0] pt-[4rem]">
+    {{ job.location }}
+  </h4>
 </section>

@@ -28,10 +28,6 @@
   overflow: hidden;
 }
 
-.inputField::placeholder {
-  color: #8c8f96;
-}
-
 .checkboxLabel {
   position: relative;
   display: flex;
