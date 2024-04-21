@@ -17,7 +17,7 @@ export class HomeComponent {
   public filterByLocation: boolean = false;
   public isDarkTheme: boolean = false;
 
-  private increment = 12;
+  private increment = 9;
   private currentIndex = 0;
 
   constructor(private appService: AppService) {}
