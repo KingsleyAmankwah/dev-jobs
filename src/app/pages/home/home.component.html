@@ -17,6 +17,8 @@
           }"
           type="text"
           placeholder="Filter by title, companies, expertise..."
+          name="title"
+          [(ngModel)]="title"
         />
 
         <input
@@ -27,6 +29,8 @@
           }"
           type="text"
           placeholder="Filter by title..."
+          name="title"
+          [(ngModel)]="title"
         />
       </label>
 
@@ -43,6 +47,8 @@
           }"
           type="text"
           placeholder="Filter by Location..."
+          name="location"
+          [(ngModel)]="location"
         />
       </label>
 
@@ -51,6 +57,8 @@
           id="filterByFullTime"
           class="checkboxDefaultInput hidden"
           type="checkbox"
+          name="isFullTime"
+          [(ngModel)]="isFullTime"
         />
         <span
           class="checkboxCustomInput"
@@ -72,7 +80,10 @@
       </label>
 
       <div>
-        <Button class="button py-[1rem] px-[2rem] lg:px-[4rem]">
+        <Button
+          class="button py-[1rem] px-[2rem] lg:px-[4rem]"
+          (click)="searchJobs()"
+        >
           Search
         </Button>
       </div>
@@ -148,6 +159,8 @@
               }"
               type="text"
               placeholder="Filter by Location..."
+              [(ngModel)]="location"
+              name="location"
             />
           </label>
 
@@ -156,6 +169,8 @@
               id="filterByFullTimeMobile"
               class="checkboxDefaultInput hidden"
               type="checkbox"
+              [(ngModel)]="isFullTime"
+              name="isFullTime"
             />
             <span
               class="checkboxCustomInput"
@@ -178,6 +193,7 @@
           <div class="mx-3">
             <Button
               class="button flex items-center justify-center w-full py-[1rem] px-[4rem]"
+              (click)="searchJobs()"
             >
               Search
             </Button>
@@ -191,15 +207,20 @@
   <div
     class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 p-[8rem_0_0]"
   >
-    <ng-container *ngFor="let job of displayJobs">
+    @for( job of displayJobs; track displayJobs){
+    <app-job-card [job]="job" />
+    }@empty {
+    <h1>Nothing</h1>
+    }
+    <!-- <ng-container *ngFor="let job of displayJobs">
       <app-job-card [job]="job" />
-    </ng-container>
+    </ng-container> -->
   </div>
 
   <div class="flex items-center justify-center my-10">
     <Button
       class="button py-[1rem] px-[4rem]"
-      *ngIf="hasMoreJobs()"
+      *ngIf="!isSearchActive && hasMoreJobs()"
       (click)="addMoreJobs()"
     >
       Load More
