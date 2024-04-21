@@ -23,6 +23,31 @@ export class AppService {
     );
   }
 
+  public searchJobs(
+    title: string,
+    location: string,
+    isFullTime: boolean
+  ): Observable<jobStructure[]> {
+    return this.getJobsUrl().pipe(
+      map((jobs) =>
+        jobs.filter((job) => {
+          const titleMatch = title
+            ? job.position.toLowerCase().includes(title) || job.company.toLowerCase().includes(title)
+            : // job.role.content.includes(title) ||
+              // job.role.items.some((item) => item.includes(title))
+              true;
+          const locationMatch = location
+            ? job.location.toLowerCase().includes(location)
+            : true;
+          const isFullTimeMatch = isFullTime
+            ? job.contract === 'Full Time'
+            : true;
+          return titleMatch && locationMatch && isFullTimeMatch;
+        })
+      )
+    );
+  }
+
   public toggleTheme() {
     const currentTheme = this.isDarkThemeSubject.value;
     this.isDarkThemeSubject.next(!currentTheme);
