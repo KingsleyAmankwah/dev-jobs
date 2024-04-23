@@ -114,8 +114,10 @@
         </p>
 
         <div class="flex flex-col gap-6">
-          <li class="" *ngFor="let item of job.requirements.items">
-            {{ item }}
+          <li *ngFor="let item of job.requirements.items">
+            <span class="text-[#6e8098]">
+              {{ item }}
+            </span>
           </li>
         </div>
       </section>
@@ -140,7 +142,7 @@
             <span class="text-[#5964e0] font-bold">
               {{ i + 1 }}
             </span>
-            <span class="pl-3">
+            <span class="pl-3 text-[#6e8098]">
               {{ item }}
             </span>
           </div>
