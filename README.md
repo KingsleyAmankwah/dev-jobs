@@ -1,4 +1,4 @@
-<div align="center" id="top">
+![dev-light](https://github.com/KingsleyAmankwah/dev-jobs/assets/64941442/943b1aea-e789-4e80-9ab0-4fb424c0bb34)<div align="center" id="top">
 
 &#xa0;
 
@@ -25,18 +25,19 @@ DevJobs is built with the modern job seeker in mind. It aggregates job listings 
 
 ## :sparkles: Features
 
-- **Comprehensive Job Listings**: Access a wide range of job opportunities from various sectors.
+- **Comprehensive Job Listings**: Access a wide range of job opportunities.
 - **Filtering and Search**: Easily find jobs that match your criteria with our intuitive filtering system.
 - **Light and Dark Mode**: Customize your browsing experience with light and dark theme options.
 - **Responsive Design**: Enjoy a seamless experience on any device, whether you're at home or on the go.
 
 ### Dark Theme
 
-![dark-theme](https://github.com/KingsleyAmankwah/countries-app/assets/64941442/7a4160aa-cf6a-430a-8b2b-f976215dc875)
+![dark-theme](https://github.com/KingsleyAmankwah/dev-jobs/assets/64941442/ed50e8a3-a08e-4cd0-bb77-dc7b88a33866)
 
 ### Light Theme
 
-![light-theme](https://github.com/KingsleyAmankwah/countries-app/assets/64941442/a4aef289-8d3d-4bcf-8c31-6382920609bd)
+![light-theme](https://github.com/KingsleyAmankwah/dev-jobs/assets/64941442/a3fc8ee9-9de1-4ff6-b0e5-d70b68e8f5bf)
+
 
 ## :rocket: Technologies
 
