@@ -1,4 +1,4 @@
-![dev-light](https://github.com/KingsleyAmankwah/dev-jobs/assets/64941442/943b1aea-e789-4e80-9ab0-4fb424c0bb34)<div align="center" id="top">
+<div align="center" id="top">
 
 &#xa0;
 
