@@ -16,10 +16,15 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.6rem;
   line-height: 2.6rem;
+  color: #5964e0;
+}
+
+p {
   color: #6e8098;
 }
 
