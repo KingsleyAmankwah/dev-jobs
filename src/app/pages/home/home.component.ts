@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  public jobs: jobStructure[] = [];
+  public allJobs: jobStructure[] = [];
   public displayJobs: jobStructure[] = [];
   public filterByLocation: boolean = false;
   public isDarkTheme: boolean = false;
@@ -21,8 +21,6 @@ export class HomeComponent {
   public location: string = '';
   public isFullTime: boolean = false;
   public isSearchActive: boolean = false;
-  // Add a new array to store all jobs
-  public allJobs: jobStructure[] = [];
 
   private increment = 9;
   private currentIndex = 0;
@@ -30,15 +28,19 @@ export class HomeComponent {
   constructor(private appService: AppService) {}
 
   ngOnInit() {
+    this.appService.getJobsUrl().subscribe((data) => {
+      this.allJobs = data;
+      this.addMoreJobs();
+    });
+
     this.appService.isDarkTheme.subscribe((darkTheme) => {
       this.isDarkTheme = darkTheme;
-
-      this.appService.getJobsUrl().subscribe((data) => {
-        // this.allJobs = data;
-        this.jobs = data;
-        this.addMoreJobs();
-      });
     });
+  }
+
+  public checkInputsAndSearch(): void {
+    if (!this.title && !this.location && !this.isFullTime)
+      return this.resetDisplayJobs();
   }
 
   public toggleFilterByLocation() {
@@ -46,37 +48,29 @@ export class HomeComponent {
   }
 
   public addMoreJobs(): void {
-    if (this.currentIndex < this.jobs.length) {
-      const nextIndex = this.currentIndex + this.increment;
-      this.displayJobs = this.displayJobs.concat(
-        this.jobs.slice(this.currentIndex, nextIndex)
-      );
-      this.currentIndex = nextIndex;
-    }
+    const nextIndex = this.currentIndex + this.increment;
+    this.displayJobs = [...this.displayJobs, ...this.allJobs.slice(this.currentIndex, nextIndex)];
+    this.currentIndex = nextIndex;
   }
 
   public hasMoreJobs(): boolean {
-    return this.currentIndex < this.jobs.length;
+    return this.currentIndex < this.allJobs.length;
   }
 
   public searchJobs() {
     if (this.title || this.location || this.isFullTime) {
-      this.isSearchActive = true; // Search is active
-      this.appService
-        .searchJobs(this.title, this.location, this.isFullTime)
-        .subscribe((jobs) => {
+      this.isSearchActive = true;
+      this.appService.searchJobs(this.title, this.location, this.isFullTime).subscribe((jobs) => {
           this.displayJobs = jobs;
         });
     } else {
       this.resetDisplayJobs();
-      this
     }
   }
 
   private resetDisplayJobs() {
-    this.displayJobs = [];
     this.currentIndex = 0;
-    this.isSearchActive = false; // Reset search state
-    this.addMoreJobs(); // Re-add jobs based on the increment
+    this.displayJobs = this.allJobs.slice(0, this.increment);
+    this.isSearchActive = false;
   }
 }
