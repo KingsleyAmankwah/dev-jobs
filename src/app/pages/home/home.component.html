@@ -19,6 +19,7 @@
           placeholder="Filter by title, companies, expertise..."
           name="title"
           [(ngModel)]="title"
+          (ngModelChange)="checkInputsAndSearch()"
         />
 
         <input
@@ -31,6 +32,7 @@
           placeholder="Filter by title..."
           name="title"
           [(ngModel)]="title"
+          (ngModelChange)="checkInputsAndSearch()"
         />
       </label>
 
@@ -49,6 +51,7 @@
           placeholder="Filter by Location..."
           name="location"
           [(ngModel)]="location"
+          (ngModelChange)="checkInputsAndSearch()"
         />
       </label>
 
@@ -59,6 +62,7 @@
           type="checkbox"
           name="isFullTime"
           [(ngModel)]="isFullTime"
+          (ngModelChange)="checkInputsAndSearch()"
         />
         <span
           class="checkboxCustomInput"
@@ -104,6 +108,9 @@
         }"
         type="text"
         placeholder="Filter by title..."
+        name="title"
+        [(ngModel)]="title"
+        (ngModelChange)="checkInputsAndSearch()"
       />
 
       <div class="flex items-center justify-between gap-5">
@@ -159,8 +166,9 @@
               }"
               type="text"
               placeholder="Filter by Location..."
-              [(ngModel)]="location"
               name="location"
+              [(ngModel)]="location"
+              (ngModelChange)="checkInputsAndSearch()"
             />
           </label>
 
@@ -169,8 +177,9 @@
               id="filterByFullTimeMobile"
               class="checkboxDefaultInput hidden"
               type="checkbox"
-              [(ngModel)]="isFullTime"
               name="isFullTime"
+              [(ngModel)]="isFullTime"
+              (ngModelChange)="checkInputsAndSearch()"
             />
             <span
               class="checkboxCustomInput"
@@ -194,6 +203,7 @@
             <Button
               class="button flex items-center justify-center w-full py-[1rem] px-[4rem]"
               (click)="searchJobs()"
+              (click)="toggleFilterByLocation()"
             >
               Search
             </Button>
@@ -210,11 +220,26 @@
     @for( job of displayJobs; track displayJobs){
     <app-job-card [job]="job" />
     }@empty {
-    <h1>Nothing</h1>
+    <div class="col-span-full flex flex-col items-center justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="96"
+        height="96"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="mb-4"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+      <p class="text-lg text-center">No results found for the search input</p>
+    </div>
     }
-    <!-- <ng-container *ngFor="let job of displayJobs">
-      <app-job-card [job]="job" />
-    </ng-container> -->
   </div>
 
   <div class="flex items-center justify-center my-10">
