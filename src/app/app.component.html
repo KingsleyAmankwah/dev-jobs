@@ -2,7 +2,13 @@
   <div
     class="relative flex w-full justify-between lg:px-[10%] px-[5%] items-center h-[12rem]"
   >
-    <img src="../assets/images/desktop/logo.svg" alt="Devjobs logo" />
+    <div [routerLink]="['/']">
+      <img
+        class="cursor-pointer"
+        src="../assets/images/desktop/logo.svg"
+        alt="Devjobs logo"
+      />
+    </div>
 
     <div class="toggle">
       <img
