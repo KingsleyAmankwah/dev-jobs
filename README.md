@@ -38,7 +38,6 @@ DevJobs is built with the modern job seeker in mind. It aggregates job listings 
 
 ![light-theme](https://github.com/KingsleyAmankwah/dev-jobs/assets/64941442/a3fc8ee9-9de1-4ff6-b0e5-d70b68e8f5bf)
 
-
 ## :rocket: Technologies
 
 The following tools were used in this project:
