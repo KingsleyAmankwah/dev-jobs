@@ -49,7 +49,10 @@ export class HomeComponent {
 
   public addMoreJobs(): void {
     const nextIndex = this.currentIndex + this.increment;
-    this.displayJobs = [...this.displayJobs, ...this.allJobs.slice(this.currentIndex, nextIndex)];
+    this.displayJobs = [
+      ...this.displayJobs,
+      ...this.allJobs.slice(this.currentIndex, nextIndex),
+    ];
     this.currentIndex = nextIndex;
   }
 
@@ -60,7 +63,9 @@ export class HomeComponent {
   public searchJobs() {
     if (this.title || this.location || this.isFullTime) {
       this.isSearchActive = true;
-      this.appService.searchJobs(this.title, this.location, this.isFullTime).subscribe((jobs) => {
+      this.appService
+        .searchJobs(this.title, this.location, this.isFullTime)
+        .subscribe((jobs) => {
           this.displayJobs = jobs;
         });
     } else {
