@@ -11,7 +11,7 @@ import { AppService } from './services/app.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'dev-jobs';
+  title = 'Dev Jobs';
   public isActive = false;
   private isDarkTheme = false;
 
